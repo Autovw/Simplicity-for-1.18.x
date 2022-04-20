@@ -3,7 +3,7 @@
 
 This mod adds the following new items:
 
-Ebony Wood
-Rubies
-Red Cornflower
-Blueberries
+Ebony Wood,
+Rubies,
+Red Cornflower,
+Blueberries.
