@@ -21,6 +21,7 @@ public class ModDataGenerator {
         if (event.includeServer()) {
             dataGenerator.addProvider(blockTagsProvider);
             dataGenerator.addProvider(new ModItemTagsProvider(dataGenerator, blockTagsProvider, Simplicity.MOD_ID, existingFileHelper));
+            dataGenerator.addProvider(new ModRecipeProvider(dataGenerator));
             dataGenerator.addProvider(new ModLootTableProvider(dataGenerator));
         }
 
