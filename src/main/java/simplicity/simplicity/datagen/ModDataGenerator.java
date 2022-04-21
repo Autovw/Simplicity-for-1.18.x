@@ -6,9 +6,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 import simplicity.simplicity.Simplicity;
-import simplicity.simplicity.datagen.provider.ModBlockStateProvider;
-import simplicity.simplicity.datagen.provider.ModItemModelProvider;
-import simplicity.simplicity.datagen.provider.ModLootTableProvider;
+import simplicity.simplicity.datagen.provider.*;
 
 @Mod.EventBusSubscriber(modid = Simplicity.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModDataGenerator {
@@ -18,7 +16,11 @@ public class ModDataGenerator {
         DataGenerator dataGenerator = event.getGenerator();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
+        ModBlockTagsProvider blockTagsProvider = new ModBlockTagsProvider(dataGenerator, Simplicity.MOD_ID, existingFileHelper);
+
         if (event.includeServer()) {
+            dataGenerator.addProvider(blockTagsProvider);
+            dataGenerator.addProvider(new ModItemTagsProvider(dataGenerator, blockTagsProvider, Simplicity.MOD_ID, existingFileHelper));
             dataGenerator.addProvider(new ModLootTableProvider(dataGenerator));
         }
 
