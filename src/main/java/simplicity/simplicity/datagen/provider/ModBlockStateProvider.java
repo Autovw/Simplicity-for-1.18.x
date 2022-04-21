@@ -60,6 +60,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
     protected void flowerModBlock(Block flower, ResourceLocation texture) {
         String path = flower.getRegistryName().getPath();
         simpleBlock(flower, models().cross(path, texture));
-        itemModels().withExistingParent(path, new ResourceLocation(flower.getRegistryName().getNamespace(), "block/" + path));
+        itemModels().withExistingParent(path, new ResourceLocation("item/generated")).texture("layer0", "block/" + path);
     }
 }
