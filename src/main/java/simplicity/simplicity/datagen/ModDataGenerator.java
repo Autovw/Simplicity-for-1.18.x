@@ -28,6 +28,7 @@ public class ModDataGenerator {
         if (event.includeClient()) {
             dataGenerator.addProvider(new ModItemModelProvider(dataGenerator, Simplicity.MOD_ID, existingFileHelper));
             dataGenerator.addProvider(new ModBlockStateProvider(dataGenerator, Simplicity.MOD_ID, existingFileHelper));
+            dataGenerator.addProvider(new ModEnUsLangProvider(dataGenerator, Simplicity.MOD_ID));
         }
     }
 }
