@@ -8,6 +8,7 @@ import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 import simplicity.simplicity.Simplicity;
 import simplicity.simplicity.datagen.provider.ModBlockStateProvider;
 import simplicity.simplicity.datagen.provider.ModItemModelProvider;
+import simplicity.simplicity.datagen.provider.ModLootTableProvider;
 
 @Mod.EventBusSubscriber(modid = Simplicity.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModDataGenerator {
@@ -16,6 +17,10 @@ public class ModDataGenerator {
     public static void onGatherData(final GatherDataEvent event) {
         DataGenerator dataGenerator = event.getGenerator();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+
+        if (event.includeServer()) {
+            dataGenerator.addProvider(new ModLootTableProvider(dataGenerator));
+        }
 
         if (event.includeClient()) {
             dataGenerator.addProvider(new ModItemModelProvider(dataGenerator, Simplicity.MOD_ID, existingFileHelper));
