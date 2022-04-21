@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "simplicity:ruby_from_block"
+    ]
+  },
+  "criteria": {
+    "has_ruby_block": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "simplicity:ruby_block"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "simplicity:ruby_from_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_ruby_block",
+      "has_the_recipe"
+    ]
+  ]
+}
