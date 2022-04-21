@@ -13,6 +13,7 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraftforge.registries.RegistryObject;
 import simplicity.simplicity.core.init.BlockInit;
+import simplicity.simplicity.core.init.ItemInit;
 
 import java.util.List;
 import java.util.Map;
@@ -47,8 +48,8 @@ public class ModLootTableProvider extends LootTableProvider {
         protected void addTables() {
             this.dropSelf(BlockInit.EBONY_LOG.get());
             this.dropSelf(BlockInit.STRIPPED_EBONY_LOG.get());
-            this.dropSelf(BlockInit.RUBY_ORE.get());
-            this.dropSelf(BlockInit.DEEPSLATE_RUBY_ORE.get());
+            this.add(BlockInit.RUBY_ORE.get(), (builder) -> createOreDrop(builder, ItemInit.RUBY.get()));
+            this.add(BlockInit.DEEPSLATE_RUBY_ORE.get(), (builder) -> createOreDrop(builder, ItemInit.RUBY.get()));
             this.dropSelf(BlockInit.RUBY_BLOCK.get());
             this.dropSelf(BlockInit.RED_CORNFLOWER.get());
         }
