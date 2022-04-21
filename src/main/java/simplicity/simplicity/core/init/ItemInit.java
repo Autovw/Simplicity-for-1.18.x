@@ -17,6 +17,7 @@ public class ItemInit {
     public static final RegistryObject<Item> RUBY_ORE = ITEMS.register("ruby_ore", () -> new BlockItem(BlockInit.RUBY_ORE.get(),new Item.Properties().tab(Simplicity.SIMPLICITY)));
     public static final RegistryObject<Item> DEEPSLATE_RUBY_ORE = ITEMS.register("deepslate_ruby_ore", () -> new BlockItem(BlockInit.DEEPSLATE_RUBY_ORE.get(),new Item.Properties().tab(Simplicity.SIMPLICITY)));
     public static final RegistryObject<Item> RUBY = ITEMS.register("ruby", () -> new Item(new Item.Properties().tab(Simplicity.SIMPLICITY)));
+    public static final RegistryObject<Item> RUBY_BLOCK = ITEMS.register("ruby_block", () -> new BlockItem(BlockInit.RUBY_BLOCK.get(), new Item.Properties().tab(Simplicity.SIMPLICITY)));
     public static final RegistryObject<Item> RED_CORNFLOWER = ITEMS.register("red_cornflower", () -> new BlockItem(BlockInit.RED_CORNFLOWER.get(),new Item.Properties().tab(Simplicity.SIMPLICITY)));
 
 
