@@ -16,6 +16,9 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         super(generator, blockTagsProvider, modId, existingFileHelper);
     }
 
+    /**
+     * Add item tags here
+     */
     @Override
     protected void addTags() {
         tag(ItemTags.SMALL_FLOWERS)

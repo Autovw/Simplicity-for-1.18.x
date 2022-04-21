@@ -15,6 +15,9 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         super(generator, modId, existingFileHelper);
     }
 
+    /**
+     * Add block tags here
+     */
     @Override
     protected void addTags() {
         tag(BlockTags.MINEABLE_WITH_AXE)

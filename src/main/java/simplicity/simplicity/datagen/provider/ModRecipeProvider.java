@@ -7,7 +7,6 @@ import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import simplicity.simplicity.Simplicity;
-import simplicity.simplicity.core.init.BlockInit;
 import simplicity.simplicity.core.init.ItemInit;
 
 import java.util.function.Consumer;
@@ -20,11 +19,19 @@ public class ModRecipeProvider extends RecipeProvider {
         super(generator);
     }
 
+    /**
+     * Add new recipes below
+     * @param consumer      Recipe consumer
+     */
     @Override
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
         rubyBlockRecipes(consumer);
     }
 
+    /**
+     * Recipes for creating a Ruby Block, and converting back to items
+     * @param consumer      Recipe consumer
+     */
     private void rubyBlockRecipes(Consumer<FinishedRecipe> consumer) {
         // Ruby item to Ruby Block
         ShapedRecipeBuilder.shaped(ItemInit.RUBY_BLOCK.get(), 1)
