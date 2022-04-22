@@ -31,5 +31,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 
         tag(BlockTags.SMALL_FLOWERS)
                 .add(BlockInit.RED_CORNFLOWER.get());
+
+        tag(BlockTags.REPLACEABLE_PLANTS)
+                .add(BlockInit.BLUEBERRY_BUSH.get());
     }
 }

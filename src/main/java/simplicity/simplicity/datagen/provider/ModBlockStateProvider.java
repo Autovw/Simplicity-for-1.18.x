@@ -7,6 +7,7 @@ import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import simplicity.simplicity.Simplicity;
+import simplicity.simplicity.common.properties.blocks.BlueberryBushBlock;
 import simplicity.simplicity.core.init.BlockInit;
 
 /**
@@ -27,6 +28,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         logModBlock(BlockInit.STRIPPED_EBONY_LOG.get(), new ResourceLocation(Simplicity.MOD_ID, "block/stripped_ebony_log"), new ResourceLocation(Simplicity.MOD_ID, "block/stripped_ebony_log_top"));
 
         flowerModBlock(BlockInit.RED_CORNFLOWER.get(), new ResourceLocation(Simplicity.MOD_ID, "block/red_cornflower"));
+
+        bushModBlock(BlockInit.BLUEBERRY_BUSH.get(), new ResourceLocation(Simplicity.MOD_ID, "block/blueberry_bush_stage0"), new ResourceLocation(Simplicity.MOD_ID, "block/blueberry_bush_stage1"), new ResourceLocation(Simplicity.MOD_ID, "block/blueberry_bush_stage2"), new ResourceLocation(Simplicity.MOD_ID, "block/blueberry_bush_stage3"));
     }
 
     /**
@@ -61,5 +64,16 @@ public class ModBlockStateProvider extends BlockStateProvider {
         String path = flower.getRegistryName().getPath();
         simpleBlock(flower, models().cross(path, texture));
         itemModels().withExistingParent(path, new ResourceLocation("item/generated")).texture("layer0", "block/" + path);
+
     }
+
+    protected void bushModBlock(Block bush, ResourceLocation textureStage0, ResourceLocation textureStage1, ResourceLocation textureStage2, ResourceLocation textureStage3) {
+        String path = bush.getRegistryName().getPath();
+        simpleBlock((BlueberryBushBlock) bush, models().cross(path + "_0", textureStage0));
+        simpleBlock((BlueberryBushBlock) bush, models().cross(path + "_1", textureStage1));
+        simpleBlock((BlueberryBushBlock) bush, models().cross(path + "_2", textureStage2));
+        simpleBlock((BlueberryBushBlock) bush, models().cross(path + "_3", textureStage3));
+        itemModels().withExistingParent(path, new ResourceLocation("item/generated")).texture("layer0", "block/" +path);
+    }
+
 }

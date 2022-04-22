@@ -26,6 +26,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(BlockInit.DEEPSLATE_RUBY_ORE.get(), "Deepslate Ruby Ore");
         add(BlockInit.RUBY_BLOCK.get(), "Ruby Block");
         add(BlockInit.RED_CORNFLOWER.get(), "Red Cornflower");
+        add(BlockInit.BLUEBERRY_BUSH.get(), "Blueberries");
 
         // Misc
         add("itemGroup.simplicity", "Simplicity");

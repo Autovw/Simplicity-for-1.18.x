@@ -52,6 +52,7 @@ public class ModLootTableProvider extends LootTableProvider {
             this.add(BlockInit.DEEPSLATE_RUBY_ORE.get(), (builder) -> createOreDrop(builder, ItemInit.RUBY.get()));
             this.dropSelf(BlockInit.RUBY_BLOCK.get());
             this.dropSelf(BlockInit.RED_CORNFLOWER.get());
+            this.dropSelf(BlockInit.BLUEBERRY_BUSH.get());
         }
 
         @Override
