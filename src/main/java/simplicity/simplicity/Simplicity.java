@@ -53,5 +53,6 @@ public class Simplicity {
 
     public void clientSetup(FMLClientSetupEvent event) {
         ItemBlockRenderTypes.setRenderLayer(BlockInit.RED_CORNFLOWER.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.BLUEBERRY_BUSH.get(), RenderType.cutout());
     }
 }
