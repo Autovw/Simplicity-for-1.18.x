@@ -6,6 +6,8 @@ import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Blocks;
 import simplicity.simplicity.Simplicity;
 import simplicity.simplicity.core.init.ItemInit;
 
@@ -26,6 +28,7 @@ public class ModRecipeProvider extends RecipeProvider {
     @Override
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
         rubyBlockRecipes(consumer);
+        blueNetherBricksRecipes(consumer);
     }
 
     /**
@@ -47,5 +50,17 @@ public class ModRecipeProvider extends RecipeProvider {
                 .requires(ItemInit.RUBY_BLOCK.get())
                 .unlockedBy("has_ruby_block", has(ItemInit.RUBY_BLOCK.get()))
                 .save(consumer, new ResourceLocation(Simplicity.MOD_ID, "ruby_from_block"));
+    }
+
+    private void blueNetherBricksRecipes(Consumer<FinishedRecipe> consumer) {
+
+        ShapedRecipeBuilder.shaped(ItemInit.BLUE_NETHER_BRICKS.get(), 1)
+                .define('W', Items.WARPED_WART_BLOCK)
+                .define('N', Items.NETHER_BRICK)
+                .pattern("NW")
+                .pattern("WN")
+                .unlockedBy("has_warped_wart_block", has(Items.WARPED_WART_BLOCK))
+                .save(consumer);
+
     }
 }
