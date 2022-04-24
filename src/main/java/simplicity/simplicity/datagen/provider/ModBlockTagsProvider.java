@@ -26,6 +26,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(BlockInit.RUBY_ORE.get())
+                .add(BlockInit.BLUE_NETHER_BRICKS.get())
                 .add(BlockInit.DEEPSLATE_RUBY_ORE.get())
                 .add(BlockInit.RUBY_BLOCK.get());
 

@@ -27,6 +27,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(BlockInit.RUBY_BLOCK.get(), "Ruby Block");
         add(BlockInit.RED_CORNFLOWER.get(), "Red Cornflower");
         add(BlockInit.BLUEBERRY_BUSH.get(), "Blueberries");
+        add(BlockInit.BLUE_NETHER_BRICKS.get(), "Blue Nether Bricks");
 
         // Misc
         add("itemGroup.simplicity", "Simplicity");

@@ -27,6 +27,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         cubeAllModBlock(BlockInit.RUBY_ORE.get(), new ResourceLocation(Simplicity.MOD_ID, "block/ruby_ore"));
         cubeAllModBlock(BlockInit.DEEPSLATE_RUBY_ORE.get(), new ResourceLocation(Simplicity.MOD_ID, "block/deepslate_ruby_ore"));
         cubeAllModBlock(BlockInit.RUBY_BLOCK.get(), new ResourceLocation(Simplicity.MOD_ID, "block/ruby_block"));
+        cubeAllModBlock(BlockInit.BLUE_NETHER_BRICKS.get(), new ResourceLocation(Simplicity.MOD_ID, "block/blue_nether_bricks"));
 
         logModBlock(BlockInit.EBONY_LOG.get(), new ResourceLocation(Simplicity.MOD_ID, "block/ebony_log"), new ResourceLocation(Simplicity.MOD_ID, "block/ebony_log_top"));
         logModBlock(BlockInit.STRIPPED_EBONY_LOG.get(), new ResourceLocation(Simplicity.MOD_ID, "block/stripped_ebony_log"), new ResourceLocation(Simplicity.MOD_ID, "block/stripped_ebony_log_top"));
