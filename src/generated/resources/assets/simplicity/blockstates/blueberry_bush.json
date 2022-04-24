@@ -1,0 +1,18 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "simplicity:block/blueberry_bush_stage0"
+      },
+      {
+        "model": "simplicity:block/blueberry_bush_stage1"
+      },
+      {
+        "model": "simplicity:block/blueberry_bush_stage2"
+      },
+      {
+        "model": "simplicity:block/blueberry_bush_stage3"
+      }
+    ]
+  }
+}
