@@ -2,16 +2,24 @@ package simplicity.simplicity.datagen.provider;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.ValidationContext;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
-import net.minecraftforge.registries.RegistryObject;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import simplicity.simplicity.common.properties.blocks.BlueberryBushBlock;
 import simplicity.simplicity.core.init.BlockInit;
 import simplicity.simplicity.core.init.ItemInit;
 
@@ -52,7 +60,20 @@ public class ModLootTableProvider extends LootTableProvider {
             this.add(BlockInit.DEEPSLATE_RUBY_ORE.get(), (builder) -> createOreDrop(builder, ItemInit.RUBY.get()));
             this.dropSelf(BlockInit.RUBY_BLOCK.get());
             this.dropSelf(BlockInit.RED_CORNFLOWER.get());
-            this.dropSelf(BlockInit.BLUEBERRY_BUSH.get());
+            this.add(BlockInit.BLUEBERRY_BUSH.get(), (builder) -> {
+                return applyExplosionDecay(builder, LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockInit.BLUEBERRY_BUSH.get())
+                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BlueberryBushBlock.AGE, 3)))
+                        .add(LootItem.lootTableItem(ItemInit.BLUEBERRIES.get()))
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0f, 3.0f)))
+                        .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)))
+                        .withPool(LootPool.lootPool().when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockInit.BLUEBERRY_BUSH.get())
+                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BlueberryBushBlock.AGE, 2)))
+                                .add(LootItem.lootTableItem(ItemInit.BLUEBERRIES.get())))
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 2.0f)))
+                        .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)));
+            });
         }
 
         @Override
