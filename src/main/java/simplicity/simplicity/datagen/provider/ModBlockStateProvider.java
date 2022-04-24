@@ -2,13 +2,17 @@ package simplicity.simplicity.datagen.provider;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import simplicity.simplicity.Simplicity;
 import simplicity.simplicity.common.properties.blocks.BlueberryBushBlock;
 import simplicity.simplicity.core.init.BlockInit;
+import simplicity.simplicity.core.init.ItemInit;
 
 /**
  * Author: Autovw
@@ -29,7 +33,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         flowerModBlock(BlockInit.RED_CORNFLOWER.get(), new ResourceLocation(Simplicity.MOD_ID, "block/red_cornflower"));
 
-        bushModBlock(BlockInit.BLUEBERRY_BUSH.get(), new ResourceLocation(Simplicity.MOD_ID, "block/blueberry_bush_stage0"), new ResourceLocation(Simplicity.MOD_ID, "block/blueberry_bush_stage1"), new ResourceLocation(Simplicity.MOD_ID, "block/blueberry_bush_stage2"), new ResourceLocation(Simplicity.MOD_ID, "block/blueberry_bush_stage3"));
+        bushModBlock(BlockInit.BLUEBERRY_BUSH.get(), new ResourceLocation(Simplicity.MOD_ID, "block/blueberry_bush_stage0"), new ResourceLocation(Simplicity.MOD_ID, "block/blueberry_bush_stage1"), new ResourceLocation(Simplicity.MOD_ID, "block/blueberry_bush_stage2"), new ResourceLocation(Simplicity.MOD_ID, "block/blueberry_bush_stage3"), ItemInit.BLUEBERRIES.get(), new ResourceLocation(Simplicity.MOD_ID, "item/blueberries"));
     }
 
     /**
@@ -67,13 +71,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     }
 
-    protected void bushModBlock(Block bush, ResourceLocation textureStage0, ResourceLocation textureStage1, ResourceLocation textureStage2, ResourceLocation textureStage3) {
+    protected void bushModBlock(Block bush, ResourceLocation textureStage0, ResourceLocation textureStage1, ResourceLocation textureStage2, ResourceLocation textureStage3, Item itemVariant, ResourceLocation itemTexture) {
         String path = bush.getRegistryName().getPath();
-        simpleBlock((BlueberryBushBlock) bush, models().cross(path + "_0", textureStage0));
-        simpleBlock((BlueberryBushBlock) bush, models().cross(path + "_1", textureStage1));
-        simpleBlock((BlueberryBushBlock) bush, models().cross(path + "_2", textureStage2));
-        simpleBlock((BlueberryBushBlock) bush, models().cross(path + "_3", textureStage3));
-        itemModels().withExistingParent(path, new ResourceLocation("item/generated")).texture("layer0", "block/" +path);
+        String itemPath = itemVariant.getRegistryName().getPath();
+        ConfiguredModel stage0 = new ConfiguredModel(models().cross(path + "_stage0", textureStage0));
+        ConfiguredModel stage1 = new ConfiguredModel(models().cross(path + "_stage1", textureStage1));
+        ConfiguredModel stage2 = new ConfiguredModel(models().cross(path + "_stage2", textureStage2));
+        ConfiguredModel stage3 = new ConfiguredModel(models().cross(path + "_stage3", textureStage3));
+        getVariantBuilder(bush).partialState().setModels(stage0, stage1, stage2, stage3);
+        itemModels().withExistingParent(itemPath, new ResourceLocation("item/generated")).texture("layer0", itemTexture);
     }
 
 }
