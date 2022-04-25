@@ -5,9 +5,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RotatedPillarBlock;
-import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
-import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import simplicity.simplicity.Simplicity;
 import simplicity.simplicity.common.properties.blocks.BlueberryBushBlock;
@@ -73,13 +72,24 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     protected void bushModBlock(Block bush, ResourceLocation textureStage0, ResourceLocation textureStage1, ResourceLocation textureStage2, ResourceLocation textureStage3, Item itemVariant, ResourceLocation itemTexture) {
-        String path = bush.getRegistryName().getPath();
-        String itemPath = itemVariant.getRegistryName().getPath();
-        ConfiguredModel stage0 = new ConfiguredModel(models().cross(path + "_stage0", textureStage0));
-        ConfiguredModel stage1 = new ConfiguredModel(models().cross(path + "_stage1", textureStage1));
-        ConfiguredModel stage2 = new ConfiguredModel(models().cross(path + "_stage2", textureStage2));
-        ConfiguredModel stage3 = new ConfiguredModel(models().cross(path + "_stage3", textureStage3));
-        getVariantBuilder(bush).partialState().setModels(stage0, stage1, stage2, stage3);
+        String path = bush.getRegistryName().getPath(); // path of block
+        String itemPath = itemVariant.getRegistryName().getPath(); // path of item
+        // block models
+        ModelFile stage0 = models().cross(path + "_stage0", textureStage0);
+        ModelFile stage1 = models().cross(path + "_stage1", textureStage1);
+        ModelFile stage2 = models().cross(path + "_stage2", textureStage2);
+        ModelFile stage3 = models().cross(path + "_stage3", textureStage3);
+        // blockstates
+        getVariantBuilder(bush)
+                .partialState().with(BlueberryBushBlock.AGE, 0)
+                .modelForState().modelFile(stage0).addModel()
+                .partialState().with(BlueberryBushBlock.AGE, 1)
+                .modelForState().modelFile(stage1).addModel()
+                .partialState().with(BlueberryBushBlock.AGE, 2)
+                .modelForState().modelFile(stage2).addModel()
+                .partialState().with(BlueberryBushBlock.AGE, 3)
+                .modelForState().modelFile(stage3).addModel();
+        // item model
         itemModels().withExistingParent(itemPath, new ResourceLocation("item/generated")).texture("layer0", itemTexture);
     }
 
