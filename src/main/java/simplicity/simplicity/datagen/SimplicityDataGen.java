@@ -9,7 +9,7 @@ import simplicity.simplicity.Simplicity;
 import simplicity.simplicity.datagen.provider.*;
 
 @Mod.EventBusSubscriber(modid = Simplicity.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class ModDataGenerator {
+public class SimplicityDataGen {
 
     @SubscribeEvent
     public static void onGatherData(final GatherDataEvent event) {

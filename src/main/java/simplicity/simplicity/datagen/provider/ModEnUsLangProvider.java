@@ -2,7 +2,6 @@ package simplicity.simplicity.datagen.provider;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
-import simplicity.simplicity.Simplicity;
 import simplicity.simplicity.core.init.BlockInit;
 import simplicity.simplicity.core.init.ItemInit;
 
