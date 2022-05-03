@@ -7,7 +7,6 @@ import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.Blocks;
 import simplicity.simplicity.Simplicity;
 import simplicity.simplicity.core.init.ItemInit;
 
