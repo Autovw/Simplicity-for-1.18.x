@@ -18,6 +18,18 @@
         ]
       }
     },
+    "has_nether_bricks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:nether_bricks"
+            ]
+          }
+        ]
+      }
+    },
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
@@ -28,6 +40,7 @@
   "requirements": [
     [
       "has_warped_wart_block",
+      "has_nether_bricks",
       "has_the_recipe"
     ]
   ]
