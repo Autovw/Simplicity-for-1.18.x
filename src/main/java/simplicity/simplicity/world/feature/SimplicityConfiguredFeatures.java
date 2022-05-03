@@ -16,6 +16,6 @@ public class SimplicityConfiguredFeatures {
             OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, BlockInit.DEEPSLATE_RUBY_ORE.get().defaultBlockState()));
 
     public static final Holder<ConfiguredFeature<OreConfiguration, ?>> RUBY_ORE = FeatureUtils.register("ruby_ore",
-            Feature.ORE, new OreConfiguration(OVERWORLD_RUBY_ORES, 9));
+            Feature.ORE, new OreConfiguration(OVERWORLD_RUBY_ORES, 5));
 
 }
