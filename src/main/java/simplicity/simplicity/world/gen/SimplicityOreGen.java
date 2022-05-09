@@ -15,5 +15,6 @@ public class SimplicityOreGen {
                 event.getGeneration().getFeatures(GenerationStep.Decoration.UNDERGROUND_ORES);
 
         base.add(SimplicityPlacedFeatures.RUBY_ORE_PLACED);
+
     }
 }

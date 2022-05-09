@@ -23,5 +23,18 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     protected void addTags() {
         tag(ItemTags.SMALL_FLOWERS)
                 .add(ItemInit.RED_CORNFLOWER.get());
+
+        tag(ItemTags.PLANKS)
+                .add(ItemInit.EBONY_PLANKS.get());
+
+        tag(ItemTags.LOGS)
+                .add(ItemInit.STRIPPED_EBONY_LOG.get())
+                .add(ItemInit.EBONY_LOG.get());
+
+        tag(ItemTags.LOGS_THAT_BURN)
+                .add(ItemInit.STRIPPED_EBONY_LOG.get())
+                .add(ItemInit.EBONY_LOG.get());
+
+
     }
 }

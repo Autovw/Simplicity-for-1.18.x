@@ -17,6 +17,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
     protected void addTranslations() {
         // Items
         add(ItemInit.RUBY.get(), "Ruby");
+        add(ItemInit.GOLDEN_BERRIES.get(), "Golden Berries");
 
         // Blocks
         add(BlockInit.EBONY_LOG.get(), "Ebony Log");
@@ -27,6 +28,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(BlockInit.RED_CORNFLOWER.get(), "Red Cornflower");
         add(BlockInit.BLUEBERRY_BUSH.get(), "Blueberries");
         add(BlockInit.BLUE_NETHER_BRICKS.get(), "Blue Nether Bricks");
+        add(BlockInit.EBONY_PLANKS.get(), "Ebony Planks");
 
         // Misc
         add("itemGroup.simplicity", "Simplicity");

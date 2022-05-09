@@ -20,6 +20,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         modItemModel(ItemInit.RUBY.get(), new ResourceLocation(Simplicity.MOD_ID, "item/ruby"));
         modItemModel(ItemInit.BLUEBERRIES.get(), new ResourceLocation(Simplicity.MOD_ID, "item/blueberries"));
+        modItemModel(ItemInit.GOLDEN_BERRIES.get(), new ResourceLocation(Simplicity.MOD_ID, "item/golden_berries"));
     }
 
     /**

@@ -10,4 +10,5 @@ public class SimplicityPlacedFeatures {
             SimplicityConfiguredFeatures.RUBY_ORE, SimplicityOrePlacement.commonOrePlacement(6, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80))));
 
     public static final Holder<PlacedFeature> PATCH_BLUEBERRY_COMMON = PlacementUtils.register("patch_blueberry_common", SimplicityConfiguredFeatures.PATCH_BLUEBERRY_BUSH, RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
+    public static final Holder<PlacedFeature> PATCH_BLUEBERRY_RARE = PlacementUtils.register("patch_blueberry_rare", SimplicityConfiguredFeatures.PATCH_BLUEBERRY_BUSH, RarityFilter.onAverageOnceEvery(384), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
 }

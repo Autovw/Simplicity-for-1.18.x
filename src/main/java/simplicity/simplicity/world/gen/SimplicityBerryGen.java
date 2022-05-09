@@ -24,6 +24,7 @@ public class SimplicityBerryGen {
                     event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
 
             base.add(SimplicityPlacedFeatures.PATCH_BLUEBERRY_COMMON);
+            base.add(SimplicityPlacedFeatures.PATCH_BLUEBERRY_RARE);
 
         }
     }
