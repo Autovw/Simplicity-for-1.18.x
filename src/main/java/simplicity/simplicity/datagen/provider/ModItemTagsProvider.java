@@ -4,9 +4,12 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
+import simplicity.simplicity.core.init.BlockInit;
 import simplicity.simplicity.core.init.ItemInit;
+import simplicity.simplicity.core.init.ModTags;
 
 /**
  * Author: Autovw
@@ -34,6 +37,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ItemTags.LOGS_THAT_BURN)
                 .add(ItemInit.STRIPPED_EBONY_LOG.get())
                 .add(ItemInit.EBONY_LOG.get());
+
+        tag(ModTags.EBONY_LOGS)
+                .add(ItemInit.EBONY_LOG.get())
+                .add(ItemInit.STRIPPED_EBONY_LOG.get());
 
 
     }

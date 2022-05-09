@@ -9,6 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import simplicity.simplicity.Simplicity;
 import simplicity.simplicity.core.init.ItemInit;
+import simplicity.simplicity.core.init.ModTags;
 
 import java.util.function.Consumer;
 
@@ -29,6 +30,7 @@ public class ModRecipeProvider extends RecipeProvider {
         rubyBlockRecipes(consumer);
         blueNetherBricksRecipes(consumer);
         goldenBerriesRecipes(consumer);
+        ebonyPlanksRecipes(consumer);
     }
 
     /**
@@ -55,11 +57,11 @@ public class ModRecipeProvider extends RecipeProvider {
     private void blueNetherBricksRecipes(Consumer<FinishedRecipe> consumer) {
         ShapedRecipeBuilder.shaped(ItemInit.BLUE_NETHER_BRICKS.get(), 1)
                 .define('W', Items.WARPED_WART_BLOCK)
-                .define('N', Items.NETHER_BRICKS)
+                .define('N', Items.NETHER_BRICK)
                 .pattern("NW")
                 .pattern("WN")
                 .unlockedBy("has_warped_wart_block", has(Items.WARPED_WART_BLOCK))
-                .unlockedBy("has_nether_bricks", has(Items.NETHER_BRICKS))
+                .unlockedBy("has_nether_bricks", has(Items.NETHER_BRICK))
                 .save(consumer);
     }
 
@@ -74,6 +76,14 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_sweer_berry", has(Items.SWEET_BERRIES))
                 .save(consumer);
 
+
+    }
+
+    private void ebonyPlanksRecipes(Consumer<FinishedRecipe> consumer) {
+        ShapelessRecipeBuilder.shapeless(ItemInit.EBONY_PLANKS.get(), 4)
+                .requires(ModTags.EBONY_LOGS)
+                .unlockedBy("has_ebony_logs", has(ModTags.EBONY_LOGS))
+                .save(consumer);
 
     }
 }

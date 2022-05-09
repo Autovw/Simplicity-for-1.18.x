@@ -18,6 +18,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         // Items
         add(ItemInit.RUBY.get(), "Ruby");
         add(ItemInit.GOLDEN_BERRIES.get(), "Golden Berries");
+        add(ItemInit.ENCHANTED_GOLDEN_BERRIES.get(), "Enchanted Golden Berries");
 
         // Blocks
         add(BlockInit.EBONY_LOG.get(), "Ebony Log");

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "simplicity:ebony_planks"
+    ]
+  },
+  "criteria": {
+    "has_ebony_logs": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "simplicity:ebony_logs"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "simplicity:ebony_planks"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_ebony_logs",
+      "has_the_recipe"
+    ]
+  ]
+}
