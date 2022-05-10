@@ -57,6 +57,8 @@ public class ModLootTableProvider extends LootTableProvider {
             this.dropSelf(BlockInit.EBONY_LOG.get());
             this.dropSelf(BlockInit.EBONY_PLANKS.get());
             this.dropSelf(BlockInit.STRIPPED_EBONY_LOG.get());
+            this.dropSelf(BlockInit.STRIPPED_EBONY_WOOD.get());
+            this.dropSelf(BlockInit.EBONY_WOOD.get());
             this.add(BlockInit.RUBY_ORE.get(), (builder) -> createOreDrop(builder, ItemInit.RUBY.get()));
             this.add(BlockInit.DEEPSLATE_RUBY_ORE.get(), (builder) -> createOreDrop(builder, ItemInit.RUBY.get()));
             this.dropSelf(BlockInit.RUBY_BLOCK.get());

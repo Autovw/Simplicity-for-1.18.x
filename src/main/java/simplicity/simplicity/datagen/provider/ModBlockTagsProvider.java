@@ -28,6 +28,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
     @Override
     protected void addTags() {
         tag(BlockTags.MINEABLE_WITH_AXE)
+                .add(BlockInit.EBONY_WOOD.get())
+                .add(BlockInit.STRIPPED_EBONY_WOOD.get())
                 .add(BlockInit.EBONY_PLANKS.get())
                 .add(BlockInit.EBONY_LOG.get())
                 .add(BlockInit.STRIPPED_EBONY_LOG.get());
@@ -49,6 +51,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(BlockInit.EBONY_PLANKS.get());
 
         tag(BlockTags.LOGS_THAT_BURN)
+                .add(BlockInit.EBONY_WOOD.get())
+                .add(BlockInit.STRIPPED_EBONY_WOOD.get())
                 .add(BlockInit.STRIPPED_EBONY_LOG.get())
                 .add(BlockInit.EBONY_LOG.get());
 

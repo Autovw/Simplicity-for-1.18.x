@@ -23,6 +23,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         // Blocks
         add(BlockInit.EBONY_LOG.get(), "Ebony Log");
         add(BlockInit.STRIPPED_EBONY_LOG.get(), "Stripped Ebony Log");
+        add(BlockInit.EBONY_WOOD.get(), "Ebony Wood");
+        add(BlockInit.STRIPPED_EBONY_WOOD.get(), "Stripped Ebony Wood");
         add(BlockInit.RUBY_ORE.get(), "Ruby Ore");
         add(BlockInit.DEEPSLATE_RUBY_ORE.get(), "Deepslate Ruby Ore");
         add(BlockInit.RUBY_BLOCK.get(), "Ruby Block");

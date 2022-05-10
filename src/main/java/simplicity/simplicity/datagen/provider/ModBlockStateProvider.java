@@ -31,6 +31,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         logModBlock(BlockInit.EBONY_LOG.get(), new ResourceLocation(Simplicity.MOD_ID, "block/ebony_log"), new ResourceLocation(Simplicity.MOD_ID, "block/ebony_log_top"));
         logModBlock(BlockInit.STRIPPED_EBONY_LOG.get(), new ResourceLocation(Simplicity.MOD_ID, "block/stripped_ebony_log"), new ResourceLocation(Simplicity.MOD_ID, "block/stripped_ebony_log_top"));
+        logModBlock(BlockInit.EBONY_WOOD.get(), new ResourceLocation(Simplicity.MOD_ID, "block/ebony_log"), new ResourceLocation(Simplicity.MOD_ID, "block/ebony_log"));
+        logModBlock(BlockInit.STRIPPED_EBONY_WOOD.get(), new ResourceLocation(Simplicity.MOD_ID, "block/stripped_ebony_log"), new ResourceLocation(Simplicity.MOD_ID, "block/stripped_ebony_log"));
 
         flowerModBlock(BlockInit.RED_CORNFLOWER.get(), new ResourceLocation(Simplicity.MOD_ID, "block/red_cornflower"));
 

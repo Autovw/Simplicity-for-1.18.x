@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
+    "simplicity:ebony_wood",
+    "simplicity:stripped_ebony_wood",
     "simplicity:stripped_ebony_log",
     "simplicity:ebony_log"
   ]
