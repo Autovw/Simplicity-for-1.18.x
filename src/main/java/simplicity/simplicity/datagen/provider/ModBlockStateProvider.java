@@ -36,6 +36,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         flowerModBlock(BlockInit.RED_CORNFLOWER.get(), new ResourceLocation(Simplicity.MOD_ID, "block/red_cornflower"));
 
+
         bushModBlock(BlockInit.BLUEBERRY_BUSH.get(), new ResourceLocation(Simplicity.MOD_ID, "block/blueberry_bush_stage0"), new ResourceLocation(Simplicity.MOD_ID, "block/blueberry_bush_stage1"), new ResourceLocation(Simplicity.MOD_ID, "block/blueberry_bush_stage2"), new ResourceLocation(Simplicity.MOD_ID, "block/blueberry_bush_stage3"), ItemInit.BLUEBERRIES.get(), new ResourceLocation(Simplicity.MOD_ID, "item/blueberries"));
     }
 
@@ -73,6 +74,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         itemModels().withExistingParent(path, new ResourceLocation("item/generated")).texture("layer0", "block/" + path);
 
     }
+
+
 
     protected void bushModBlock(Block bush, ResourceLocation textureStage0, ResourceLocation textureStage1, ResourceLocation textureStage2, ResourceLocation textureStage3, Item itemVariant, ResourceLocation itemTexture) {
         String path = bush.getRegistryName().getPath(); // path of block

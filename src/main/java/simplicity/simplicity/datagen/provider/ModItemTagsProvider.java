@@ -5,6 +5,7 @@ import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 import simplicity.simplicity.core.init.BlockInit;
@@ -43,6 +44,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ItemInit.STRIPPED_EBONY_WOOD.get())
                 .add(ItemInit.EBONY_LOG.get())
                 .add(ItemInit.STRIPPED_EBONY_LOG.get());
+
+        tag(ModTags.BERRIES)
+                .add(Items.SWEET_BERRIES)
+                .add(ItemInit.BLUEBERRIES.get());
 
 
 

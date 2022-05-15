@@ -7,6 +7,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootPool;
@@ -67,11 +68,11 @@ public class ModLootTableProvider extends LootTableProvider {
             this.add(BlockInit.BLUEBERRY_BUSH.get(), (builder) -> {
                 return applyExplosionDecay(builder, LootTable.lootTable()
                         .withPool(LootPool.lootPool()
-                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockInit.BLUEBERRY_BUSH.get())
-                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BlueberryBushBlock.AGE, 3)))
-                        .add(LootItem.lootTableItem(ItemInit.BLUEBERRIES.get()))
+                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockInit.BLUEBERRY_BUSH.get())
+                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BlueberryBushBlock.AGE, 3)))
+                                .add(LootItem.lootTableItem(ItemInit.BLUEBERRIES.get()))
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0f, 3.0f)))
-                        .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)))
+                                .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)))
                         .withPool(LootPool.lootPool().when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockInit.BLUEBERRY_BUSH.get())
                                         .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BlueberryBushBlock.AGE, 2)))
                                 .add(LootItem.lootTableItem(ItemInit.BLUEBERRIES.get())))
@@ -80,9 +81,12 @@ public class ModLootTableProvider extends LootTableProvider {
             });
         }
 
-        @Override
-        protected Iterable<Block> getKnownBlocks() {
-            return BlockInit.BLOCKS.getEntries().stream().map(Supplier::get).collect(Collectors.toList());
+
+
+            @Override
+            protected Iterable<Block> getKnownBlocks () {
+                return BlockInit.BLOCKS.getEntries().stream().map(Supplier::get).collect(Collectors.toList());
+            }
         }
     }
-}
+

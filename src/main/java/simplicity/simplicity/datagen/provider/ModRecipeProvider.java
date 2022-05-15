@@ -67,13 +67,13 @@ public class ModRecipeProvider extends RecipeProvider {
 
     private void goldenBerriesRecipes(Consumer<FinishedRecipe> consumer) {
         ShapedRecipeBuilder.shaped(ItemInit.GOLDEN_BERRIES.get(), 1)
-                .define('B', Items.SWEET_BERRIES)
+                .define('B', ModTags.BERRIES)
                 .define('G', Items.GOLD_INGOT)
                 .pattern("GGG")
                 .pattern("GBG")
                 .pattern("GGG")
                 .unlockedBy("has_gold_ingot", has((Items.GOLD_INGOT)))
-                .unlockedBy("has_sweer_berry", has(Items.SWEET_BERRIES))
+                .unlockedBy("has_berries", has(ModTags.BERRIES))
                 .save(consumer);
 
 

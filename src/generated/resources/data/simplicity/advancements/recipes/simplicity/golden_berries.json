@@ -18,14 +18,12 @@
         ]
       }
     },
-    "has_sweer_berry": {
+    "has_berries": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:sweet_berries"
-            ]
+            "tag": "simplicity:berries"
           }
         ]
       }
@@ -40,7 +38,7 @@
   "requirements": [
     [
       "has_gold_ingot",
-      "has_sweer_berry",
+      "has_berries",
       "has_the_recipe"
     ]
   ]
