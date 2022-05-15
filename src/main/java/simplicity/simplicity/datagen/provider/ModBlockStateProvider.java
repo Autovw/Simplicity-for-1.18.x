@@ -75,6 +75,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     }
 
+
     protected void bushModBlock(Block bush, ResourceLocation textureStage0, ResourceLocation textureStage1, ResourceLocation textureStage2, ResourceLocation textureStage3, Item itemVariant, ResourceLocation itemTexture) {
         String path = bush.getRegistryName().getPath(); // path of block
         String itemPath = itemVariant.getRegistryName().getPath(); // path of item
