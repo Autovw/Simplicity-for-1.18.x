@@ -49,7 +49,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(Items.SWEET_BERRIES)
                 .add(ItemInit.BLUEBERRIES.get());
 
-
-
+        tag(ItemTags.LEAVES)
+                .add(ItemInit.EBONY_LEAVES.get());
     }
 }

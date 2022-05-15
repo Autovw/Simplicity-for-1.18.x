@@ -56,8 +56,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(BlockInit.STRIPPED_EBONY_LOG.get())
                 .add(BlockInit.EBONY_LOG.get());
 
-
+        tag(BlockTags.LEAVES)
+                .add(BlockInit.EBONY_LEAVES.get());
     }
-
-
 }
