@@ -7,7 +7,6 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootPool;
@@ -85,12 +84,10 @@ public class ModLootTableProvider extends LootTableProvider {
             //this.add(BlockInit.EBONY_LEAVES.get(), (builder) -> createLeavesDrops(builder, ItemInit.EBONY_SAPLING, new float[]{0.05F, 0.0625F, 0.083333336F, 0.1F}));
         }
 
-
-
-            @Override
-            protected Iterable<Block> getKnownBlocks () {
-                return BlockInit.BLOCKS.getEntries().stream().map(Supplier::get).collect(Collectors.toList());
-            }
+        @Override
+        protected Iterable<Block> getKnownBlocks () {
+            return BlockInit.BLOCKS.getEntries().stream().map(Supplier::get).collect(Collectors.toList());
         }
     }
+}
 
