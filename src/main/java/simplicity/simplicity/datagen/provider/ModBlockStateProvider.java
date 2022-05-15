@@ -36,6 +36,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         logModBlock(BlockInit.STRIPPED_EBONY_WOOD.get(), new ResourceLocation(Simplicity.MOD_ID, "block/stripped_ebony_log"), new ResourceLocation(Simplicity.MOD_ID, "block/stripped_ebony_log"));
 
         flowerModBlock(BlockInit.RED_CORNFLOWER.get(), new ResourceLocation(Simplicity.MOD_ID, "block/red_cornflower"));
+        flowerModBlock(BlockInit.EBONY_SAPLING.get(), new ResourceLocation(Simplicity.MOD_ID, "block/ebony_sapling"));
+
+        flowerPotBlock(BlockInit.POTTED_RED_CORNFLOWER.get(), new ResourceLocation(Simplicity.MOD_ID, "block/red_cornflower"));
 
         bushModBlock(BlockInit.BLUEBERRY_BUSH.get(), new ResourceLocation(Simplicity.MOD_ID, "block/blueberry_bush_stage0"), new ResourceLocation(Simplicity.MOD_ID, "block/blueberry_bush_stage1"), new ResourceLocation(Simplicity.MOD_ID, "block/blueberry_bush_stage2"), new ResourceLocation(Simplicity.MOD_ID, "block/blueberry_bush_stage3"), ItemInit.BLUEBERRIES.get(), new ResourceLocation(Simplicity.MOD_ID, "item/blueberries"));
     }
@@ -102,5 +105,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         String path = leaves.getRegistryName().getPath();
         simpleBlock(leaves, models().withExistingParent(path, mcLoc("block/leaves")).texture("all", texture));
         itemModels().withExistingParent(path, new ResourceLocation(leaves.getRegistryName().getNamespace(), "block/" + path));
+    }
+
+    protected void flowerPotBlock(Block flowerPot, ResourceLocation texture) {
+        String path = flowerPot.getRegistryName().getPath();
+        simpleBlock(flowerPot, models().withExistingParent(path, mcLoc("block/flower_pot_cross")).texture("plant", texture));
+
     }
 }

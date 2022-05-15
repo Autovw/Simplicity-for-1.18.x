@@ -7,8 +7,10 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.ValidationContext;
@@ -19,6 +21,7 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import net.minecraftforge.registries.RegistryObject;
 import simplicity.simplicity.common.properties.blocks.BlueberryBushBlock;
 import simplicity.simplicity.core.init.BlockInit;
 import simplicity.simplicity.core.init.ItemInit;
@@ -64,6 +67,9 @@ public class ModLootTableProvider extends LootTableProvider {
             this.dropSelf(BlockInit.RUBY_BLOCK.get());
             this.dropSelf(BlockInit.BLUE_NETHER_BRICKS.get());
             this.dropSelf(BlockInit.RED_CORNFLOWER.get());
+            this.dropSelf(BlockInit.POTTED_RED_CORNFLOWER.get());
+            this.add(BlockInit.EBONY_LEAVES.get(), (builder) -> createLeavesDrops(builder, Block.byItem(ItemInit.EBONY_SAPLING.get()), new float[]{0.05F, 0.0625F, 0.083333336F, 0.1F}));
+            this.dropSelf(BlockInit.EBONY_SAPLING.get());
             this.add(BlockInit.BLUEBERRY_BUSH.get(), (builder) -> {
                 return applyExplosionDecay(builder, LootTable.lootTable()
                         .withPool(LootPool.lootPool()
@@ -79,10 +85,13 @@ public class ModLootTableProvider extends LootTableProvider {
                         .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)));
             });
 
-            this.dropSelf(BlockInit.EBONY_LEAVES.get());
+
             // TODO uncomment when sapling exist, remove above
-            //this.add(BlockInit.EBONY_LEAVES.get(), (builder) -> createLeavesDrops(builder, ItemInit.EBONY_SAPLING, new float[]{0.05F, 0.0625F, 0.083333336F, 0.1F}));
+
         }
+
+
+
 
         @Override
         protected Iterable<Block> getKnownBlocks () {

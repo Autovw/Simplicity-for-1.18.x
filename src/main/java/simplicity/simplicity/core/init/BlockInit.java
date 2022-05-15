@@ -9,6 +9,7 @@ import net.minecraftforge.registries.RegistryObject;
 import simplicity.simplicity.Simplicity;
 import simplicity.simplicity.common.properties.blocks.BlueberryBushBlock;
 import simplicity.simplicity.common.properties.blocks.FlammableLogBlock;
+import simplicity.simplicity.world.feature.tree.EbonyTreeGrower;
 
 public class BlockInit {
 
@@ -26,6 +27,7 @@ public class BlockInit {
     public static final RegistryObject<Block> RED_CORNFLOWER = BLOCKS.register("red_cornflower", () -> new FlowerBlock(MobEffects.DIG_SPEED,6, BlockBehaviour.Properties.copy(Blocks.CORNFLOWER).instabreak().noOcclusion()));
     public static final RegistryObject<Block> BLUEBERRY_BUSH = BLOCKS.register("blueberry_bush", () -> new BlueberryBushBlock(BlockBehaviour.Properties.copy(Blocks.SWEET_BERRY_BUSH).randomTicks().noCollission().requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> BLUE_NETHER_BRICKS = BLOCKS.register("blue_nether_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.RED_NETHER_BRICKS)));
-    public static final RegistryObject<Block> POTTED_RED_CORNFLOWER = BLOCKS.register("potted_red_cornflowe", () -> new FlowerPotBlock(null, RED_CORNFLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_CORNFLOWER)));
+    public static final RegistryObject<Block> POTTED_RED_CORNFLOWER = BLOCKS.register("potted_red_cornflower", () -> new FlowerPotBlock(null, RED_CORNFLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_CORNFLOWER)));
+    public static final RegistryObject<Block> EBONY_SAPLING = BLOCKS.register("ebony_sapling", () -> new SaplingBlock(new EbonyTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
 }

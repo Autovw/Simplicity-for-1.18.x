@@ -33,4 +33,5 @@ public class ItemInit {
             .effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 3000, 0), 1.0F)
             .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, 600, 0), 1.0F).build())));
     public static final RegistryObject<Item> BLUE_NETHER_BRICKS = ITEMS.register("blue_nether_bricks", () -> new BlockItem(BlockInit.BLUE_NETHER_BRICKS.get(), new Item.Properties().tab(Simplicity.SIMPLICITY)));
+    public static final RegistryObject<Item> EBONY_SAPLING = ITEMS.register("ebony_sapling", () -> new BlockItem(BlockInit.EBONY_SAPLING.get(), new Item.Properties().tab(Simplicity.SIMPLICITY)));
 }
