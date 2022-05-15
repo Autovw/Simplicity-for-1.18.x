@@ -4,11 +4,9 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
-import simplicity.simplicity.core.init.BlockInit;
 import simplicity.simplicity.core.init.ItemInit;
 import simplicity.simplicity.core.init.ModTags;
 
@@ -49,7 +47,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(Items.SWEET_BERRIES)
                 .add(ItemInit.BLUEBERRIES.get());
 
-
-
+        tag(ItemTags.LEAVES)
+                .add(ItemInit.EBONY_LEAVES.get());
     }
 }
